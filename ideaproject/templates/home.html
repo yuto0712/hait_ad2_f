@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% load static %}
 
@@ -6,15 +5,14 @@
 <link rel='stylesheet' type="text/css" href="{% static 'home.css' %}">
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Come up with</h1>
-      <br>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      <h1 class="display-4">アイデア発想フレームワーク集</h1>
+      <p class="lead">様々なアイデア発想に関するフレームワークをWeb上で再現しました。結果を仲間と共有することもできます。</p>
     </div>
 </div>
 {% endblock header %}
 
 {% block content %}
-  <div class="container">
+    <div class="container">
     {% for item in object_list %}
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -22,18 +20,18 @@
           <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
           <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
         </ol>
-        <div class="carousel-inner">
+        {% comment %} <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="https://cdn.pixabay.com/photo/2016/03/09/10/37/light-bulb-1246043_1280.jpg" class="d-block" alt="LeanCanvas"　width="680px" height="500px">
             <div class="carousel-caption d-none d-md-block">
               <h5>LeanCanvas</h5>
-              <p>リーンキャンバスはあなたのアイデアを客観的にまとめるのに最適です。</p>
+              <p>リーンキャンバスとはあなたのアイデアを客観的にまとめるのに最適です。</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="https://images.unsplash.com/photo-1603202662747-00e33e7d1468?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE1ODB9" class="d-block" alt="ブレインストーミング" width="680px" height="500px">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
+              <h5>AAA</h5>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>
@@ -44,7 +42,7 @@
               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
             </div>
           </div>
-        </div>
+        </div> {% endcomment %}
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -54,31 +52,42 @@
           <span class="sr-only">Next</span>
         </a>
     </div>
-    <div class="row row-cols-1 row-cols-md-2">
-        <div class="col mb-4">
+      <div class="col mb-4">
           <div class="card">
-            <img src="..." class="card-img-top" alt="...">
+            <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+            </svg>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <h5 class="card-title">LeanCanvas</h5>
+              <p class="card-text">リーンキャンバス（Lean Canvas）とは、ターゲットとなる顧客や顧客が抱えている課題、その課題の解決法など、ビジネスモデルを9つの要素に分けて1枚の図に書き出し、検討するためのツールです。</p>
+              <a href="{% url 'leancanvas' %}" class="btn btn-primary">作成</a>
             </div>
           </div>
         </div>
-        <div class="col mb-4">
+      <div class="col mb-4">
           <div class="card">
-            <img src="..." class="card-img-top" alt="...">
+            <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+            </svg>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <h5 class="card-title">ブレインストーミング</h5>
+              <p class="card-text">ブレインストーミングとは、集団でアイデアを出し合うことによって相互交錯の連鎖反応や発想の誘発を期待する技法です。</p>
+              <a href="{% url 'leancanvas' %}" class="btn btn-primary">作成</a>
             </div>
           </div>
         </div>
-        <div class="col mb-4">
+      <div class="col mb-4">
           <div class="card">
-            <img src="..." class="card-img-top" alt="...">
+            <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+            </svg>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+              <h5 class="card-title">SWOT分析</h5>
+              <p class="card-text">目標を達成するために意思決定を必要としている組織や個人のプロジェクトやベンチャービジネスなどにおいて、外部環境や内部環境を強み (Strengths)、弱み (Weaknesses)、機会 (Opportunities)、脅威 (Threats) の4つのカテゴリーで要因分析し、事業環境変化に対応した経営資源の最適活用を図る経営戦略策定方法です。</p>
+              <a href="{% url 'leancanvas' %}" class="btn btn-primary">作成</a>
             </div>
           </div>
         </div>
@@ -89,8 +98,9 @@
                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
             </svg>
             <div class="card-body">
-              <h5 class="card-title">LeanCanvasを作成する</h5>
-              <p class="card-text">リーンキャンバス（Lean Canvas）とは、ターゲットとなる顧客や顧客が抱えている課題、その課題の解決法など、ビジネスモデルを9つの要素に分けて1枚の図に書き出し、検討するためのツールです。</p>
+              <h5 class="card-title">マンダラート</h5>
+              <p class="card-text">マンダラートは、9つのマスの中央にテーマを置いて、連想できる単語を残りの8マスに埋めていくフレームワークです。
+              全てのマスに単語を埋めること以外は細かいルールがないため、書く人によって違うアイデアが思いつきやすいことが特徴です。2、3個アイデアが思いつく人はいますが、8マス埋めることは大変ですよね。そのため、頭からひねり出したアイデアを集めることができます。</p>
               <a href="{% url 'leancanvas' %}" class="btn btn-primary">作成</a>
             </div>
           </div>
