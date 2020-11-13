@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="C:\Users\81805\Desktop\HAIT-a2-f\venv"
+$env:VIRTUAL_ENV="C:\Users\81805\Desktop\Web_practice\venv"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name

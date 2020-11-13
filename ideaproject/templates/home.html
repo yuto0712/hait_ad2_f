@@ -3,17 +3,18 @@
 {% load static %}
 
 {% block header %}
-<link rel='stylesheet' type="text/css" href="{% static 'style.css' %}">
+<link rel='stylesheet' type="text/css" href="{% static 'home.css' %}">
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">Come up with</h1>
+      <br>
       <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
     </div>
 </div>
 {% endblock header %}
 
 {% block content %}
-    <div class="container">
+  <div class="container">
     {% for item in object_list %}
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -26,7 +27,7 @@
             <img src="https://cdn.pixabay.com/photo/2016/03/09/10/37/light-bulb-1246043_1280.jpg" class="d-block" alt="LeanCanvas"　width="680px" height="500px">
             <div class="carousel-caption d-none d-md-block">
               <h5>LeanCanvas</h5>
-              <p>リーンキャンバスとはあなたのアイデアを客観的にまとめるのに最適です。</p>
+              <p>リーンキャンバスはあなたのアイデアを客観的にまとめるのに最適です。</p>
             </div>
           </div>
           <div class="carousel-item">
