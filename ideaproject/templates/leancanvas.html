@@ -1,6 +1,18 @@
-{% extends 'base.html' %}
 {% load static %}
+<script src="{% static 'lean.js' %}"></script>
+<!doctype html>
+<html lang="ja">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <title>アイデア</title>
+</head>
+
+<body  onload="loadImage('preview');">
 {% block header %}
 <link rel='stylesheet' type="text/css" href="{% static 'lean.css' %}">
 <div class="jumbotron jumbotron-fluid">
@@ -24,7 +36,12 @@
               <h5 class="card-title">「顧客が解決する必要のある課題」を記入します。</h5>
               <p class="card-text">ターゲットと考えられる顧客セグメントにとって、優先順位の高い課題を1〜3個ほど挙げてみましょう。<br>解決すべき課題が見つからない場合は、提供しようと考えている製品やサービスが解決できる課題がない状況を意味し、ユーザー像が不透明になってしまいます。</p>
               あなたの考える課題は何ですか：<br>
-              <textarea rows="6" cols="100">ここに記入してください。</textarea><br>
+              <textarea rows="6" cols="80" id="canvas_text1"></textarea><br>
+              <p>
+              <button onclick="drawText('preview', 'canvas_text1','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              </p>
+                
+              
             </div>
         </div>
         <div class="card">
@@ -34,7 +51,10 @@
               <p class="card-text">顧客をグループ化し、どのセグメントに関わるのか、あるいは関わらないのかを設定します。<br>
                 性別や年代、住んでいる場所などのデモグラフィック属性や、利用目的などでセグメント分けをすると良いです。</p>
               あなたの考える顧客セグメントは何ですか：<br>
-              <textarea rows="6" cols="100">ここに記入してください。</textarea><br>
+              <textarea rows="6" cols="100" id="canvas_text2">ここに記入してください。</textarea><br>
+              <p>
+              <button onclick="drawText('preview', 'canvas_text2', '(canvas.width / 4.8)', '(canvas.height / 10)');">入力</button>
+              </p>
             </div>
         </div>
         <div class="card">
@@ -44,7 +64,10 @@
               <p class="card-text">ここでいう「価値」とは、課題に対して企業が提供する、製品・サービスの内容のことを指します。<br>
                 顧客セグメントごとに提供価値を考えていきますが、整合性がわかりにくい場合は、このブロックだけを抽出したバリュープロポジションキャンバスや価値・顧客シートによる検証や顧客分析を行います。</p>
               あなたの考える独自の価値提案は何ですか：<br>
-              <textarea rows="6" cols="100">ここに記入してください。</textarea><br>
+              <textarea rows="6" cols="100" id="canvas_text3">ここに記入してください。</textarea><br>
+              <p>
+              <button onclick="drawText('preview', 'canvas_text3','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              </p>
             </div>
         </div>
         <div class="card">
@@ -54,7 +77,10 @@
               <p class="card-text">一度に完璧な解決策を見つけることは至難の業です。<br>
                 よって、ユーザーインタビューなどを行い、解決策のヒントを探るなどして、リーンスタートアップの「構築―計測―学習」プロセスを繰り返し、解決策をブラッシュアップしていくことが重要です。</p>
             　あなたの考えるソリューションは何ですか：<br>
-              <textarea rows="6" cols="100">ここに記入してください。</textarea><br>
+              <textarea rows="6" cols="100" id="canvas_text4">ここに記入してください。</textarea><br>
+              <p>
+              <button onclick="drawText('preview', 'canvas_text4','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              </p>
             </div>
         </div>
         <div class="card">
@@ -65,7 +91,10 @@
                 コピーや購入ができないものが圧倒的な優位性としてふさわしいと言えます。<br>
                 例えばインサイダー情報、専門家の支持、既存の顧客などは当てはまりますが、コミットメントや情熱などは該当しません。</p>
             　あなたの考える圧倒的な優位性は何ですか：<br>
-              <textarea rows="6" cols="100">ここに記入してください。</textarea><br>
+              <textarea rows="6" cols="100" id="canvas_text5">ここに記入してください。</textarea><br>
+              <p>
+              <button onclick="drawText('preview', 'canvas_text5','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              </p>
             </div>
         </div>
         <div class="card">
@@ -75,7 +104,10 @@
               <p class="card-text">スタートアップや新規事業において、コストを引き下げたり、無償提供することで利用者を増やしたりする手法はよく見られます。<br>
                 一方で、最終的にどう収益をあげるのかを見越した、慎重な計画が必要な項目です。</p>
               あなたの考える収益の流れは何ですか：<br>
-              <textarea rows="6" cols="100">ここに記入してください。</textarea><br>
+              <textarea rows="6" cols="100" id="canvas_text6">ここに記入してください。</textarea><br>
+              <p>
+              <button onclick="drawText('preview', 'canvas_text6','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              </p>
             </div>
         </div>
         <div class="card">
@@ -84,7 +116,10 @@
               <h5 class="card-title">ビジネスモデルを運営するにあたり発生するコストを記入します。</h5>
               <p class="card-text">ここで算出したコストと【6】の収益から、大まかな損益分岐点を計算できます。</p>
               あなたの考えるコスト構造は何ですか：<br>
-              <textarea rows="6" cols="100">ここに記入してください。</textarea><br>
+              <textarea rows="6" cols="100" id="canvas_text7">ここに記入してください。</textarea><br>
+              <p>
+              <button onclick="drawText('preview', 'canvas_text7','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              </p>
             </div>
         </div>
         <div class="card">
@@ -93,7 +128,10 @@
               <h5 class="card-title">どの数値が出れば成功と言えるのか、パフォーマンスを測る指標を記入します。</h5>
               <p class="card-text">KPI（Key Performance Indicator, 重要業績評価指標）に設定する数値は様々ありますが、<br>近年のインターネットを活用したサービスでは、<br>顧客の行動モデルを表した、AARRR（アー）モデル（別名：海賊指標）というフレームワークが活用されています。</p>
               あなたの考える主要指標は何ですか：<br>
-              <textarea rows="6" cols="100">ここに記入してください。</textarea><br>
+              <textarea rows="6" cols="100" id="canvas_text8">ここに記入してください。</textarea><br>
+              <p>
+              <button onclick="drawText('preview', 'canvas_text8','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              </p>
             </div>
         </div>
         <div class="card">
@@ -103,9 +141,17 @@
               <p class="card-text">コミュニケーション、流通、販売チャネル、アフターフォローなど、商品やサービスの提供ルートや、プロモーションの手段を設定します。<br>
                 また、初期段階では規模にこだわるのではなく、リーンスタートアップの「学習」プロセスを進めることを目的とすると良いです。</p>
               あなたの考えるチャネルは何ですか：<br>
-              <textarea rows="6" cols="100">ここに記入してください。</textarea><br>
+              <textarea rows="6" cols="100" id="canvas_text9">ここに記入してください。</textarea><br>
+              <p>
+              <button onclick="drawText('preview', 'canvas_text9','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              </p>
             </div>
         </div>
     </div>
 </div>
+<br>
+
+<p><canvas id='preview'　width-100></canvas></p>
 {% endblock content %}
+</body>
+</html>
