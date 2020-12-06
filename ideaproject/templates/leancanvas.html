@@ -13,7 +13,7 @@
 <body  onload="loadImage('preview');">
 {% block header %}
 {% load static %}
-<script src="{% static 'lean.js' %}"></script>
+
 <link rel='stylesheet' type="text/css" href="{% static 'lean.css' %}">
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
@@ -23,7 +23,6 @@
     </div>
 </div>
 {% endblock header %}
-
 {% block content %}
 <div class="container">
     <div class="text-center">
@@ -31,19 +30,19 @@
     </div>
     <div class="cards">
         <div class="card">
-            <h4 class="card-header">【１】課題</h5>
+            <h4 class="card-header">【１】課題</h4>
             <div class="card-body">
               <h5 class="card-title">「顧客が解決する必要のある課題」を記入します。</h5>
               <p class="card-text">ターゲットと考えられる顧客セグメントにとって、優先順位の高い課題を1〜3個ほど挙げてみましょう。<br>解決すべき課題が見つからない場合は、提供しようと考えている製品やサービスが解決できる課題がない状況を意味し、ユーザー像が不透明になってしまいます。</p>
               あなたの考える課題は何ですか：<br>
-              <textarea rows="6" cols="80" id="canvas_text1"></textarea><br>
-              <p>
-              <button onclick="drawText('preview', 'canvas_text1','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              <textarea rows="6" cols="80" id="canvas_text1">ここに記入してください。</textarea><br> 
+              <p>   
+              <button onclick="drawText('preview', 'canvas_text1', 15, 50);">入力</button> <!-- 10文字で改行 -->
               </p>
             </div>
         </div>
         <div class="card">
-            <h4 class="card-header">【２】顧客セグメント</h5>
+            <h4 class="card-header">【２】顧客セグメント</h4>
             <div class="card-body">
               <h5 class="card-title">「誰に価値を提供するのか」を記入します。</h5>
               <p class="card-text">顧客をグループ化し、どのセグメントに関わるのか、あるいは関わらないのかを設定します。<br>
@@ -51,12 +50,12 @@
               あなたの考える顧客セグメントは何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text2">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text2', '(canvas.width / 4.8)', '(canvas.height / 10)');">入力</button>
+              <button onclick="drawText('preview', 'canvas_text2', 580, 50);">入力</button> <!-- 9文字で改行 -->
               </p>
             </div>
         </div>
         <div class="card">
-            <h4 class="card-header">【３】独自の価値提案</h5>
+            <h4 class="card-header">【３】独自の価値提案</h4>
             <div class="card-body">
               <h5 class="card-title">顧客セグメントが抱える課題に対して、「どのような価値を提供するのか」を記入します。</h5>
               <p class="card-text">ここでいう「価値」とは、課題に対して企業が提供する、製品・サービスの内容のことを指します。<br>
@@ -64,12 +63,12 @@
               あなたの考える独自の価値提案は何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text3">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text3','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              <button onclick="drawText('preview', 'canvas_text3', 296, 50);">入力</button> <!-- 10文字で改行 -->
               </p>
             </div>
         </div>
         <div class="card">
-            <h4 class="card-header">【４】ソリューション</h5>
+            <h4 class="card-header">【４】ソリューション</h4>
             <div class="card-body">
               <h5 class="card-title">課題の解決策を記入します。</h5>
               <p class="card-text">一度に完璧な解決策を見つけることは至難の業です。<br>
@@ -77,12 +76,12 @@
             　あなたの考えるソリューションは何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text4">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text4','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              <button onclick="drawText('preview', 'canvas_text4', 154, 50);">入力</button> <!-- 10文字で改行 -->
               </p>
             </div>
         </div>
         <div class="card">
-            <h4 class="card-header">【５】圧倒的な優位性</h5>
+            <h4 class="card-header">【５】圧倒的な優位性</h4>
             <div class="card-body">
               <h5 class="card-title">競合他社に簡単には参入されない参入障壁や自社の優位性について記入します</h5>
               <p class="card-text">これはパートナーや投資家を探す際にも有利に働きます。<br>
@@ -91,12 +90,12 @@
             　あなたの考える圧倒的な優位性は何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text5">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text5','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              <button onclick="drawText('preview', 'canvas_text5', 435, 50);">入力</button> <!-- 10文字で改行 -->
               </p>
             </div>
         </div>
         <div class="card">
-            <h4 class="card-header">【６】収益の流れ</h5>
+            <h4 class="card-header">【６】収益の流れ</h4>
             <div class="card-body">
               <h5 class="card-title">「どのように収益化させるか」を記入します。</h5>
               <p class="card-text">スタートアップや新規事業において、コストを引き下げたり、無償提供することで利用者を増やしたりする手法はよく見られます。<br>
@@ -104,36 +103,36 @@
               あなたの考える収益の流れは何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text6">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text6','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              <button onclick="drawText('preview', 'canvas_text6', 370, 390);">入力</button> <!-- 25文字で改行-->
               </p>
             </div>
         </div>
         <div class="card">
-            <h4 class="card-header">【７】コスト構造</h5>
+            <h4 class="card-header">【７】コスト構造</h4>
             <div class="card-body">
               <h5 class="card-title">ビジネスモデルを運営するにあたり発生するコストを記入します。</h5>
               <p class="card-text">ここで算出したコストと【6】の収益から、大まかな損益分岐点を計算できます。</p>
               あなたの考えるコスト構造は何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text7">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text7','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              <button onclick="drawText('preview', 'canvas_text7', 15, 390);">入力</button> <!-- 25文字で改行-->
               </p>
             </div>
         </div>
         <div class="card">
-            <h4 class="card-header">【８】主要指標</h5>
+            <h4 class="card-header">【８】主要指標</h4>
             <div class="card-body">
               <h5 class="card-title">どの数値が出れば成功と言えるのか、パフォーマンスを測る指標を記入します。</h5>
               <p class="card-text">KPI（Key Performance Indicator, 重要業績評価指標）に設定する数値は様々ありますが、<br>近年のインターネットを活用したサービスでは、<br>顧客の行動モデルを表した、AARRR（アー）モデル（別名：海賊指標）というフレームワークが活用されています。</p>
               あなたの考える主要指標は何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text8">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text8','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              <button onclick="drawText('preview', 'canvas_text8', 155, 220);">入力</button> <!--10文字で改行-->
               </p>
             </div>
         </div>
         <div class="card">
-            <h4 class="card-header">【９】チャネル</h5>
+            <h4 class="card-header">【９】チャネル</h4>
             <div class="card-body">
               <h5 class="card-title">特定の顧客セグメントに対して、「どのチャネルを通じてリーチするか」を記入します。</h5>
               <p class="card-text">コミュニケーション、流通、販売チャネル、アフターフォローなど、商品やサービスの提供ルートや、プロモーションの手段を設定します。<br>
@@ -141,7 +140,7 @@
               あなたの考えるチャネルは何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text9">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text9','(canvas.width / 50)','(canvas.height / 10)');">入力</button>
+              <button onclick="drawText('preview', 'canvas_text9', 435, 220);">入力</button> <!--10文字で改行-->
               </p>
             </div>
         </div>
@@ -150,6 +149,7 @@
 <br>
 
 <p><canvas id='preview'　width-100></canvas></p>
+<script src="{% static 'lean.js' %}"></script>
 {% endblock content %}
 </body>
 </html>
