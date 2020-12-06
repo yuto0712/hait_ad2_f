@@ -21,7 +21,7 @@ function loadImage(id)
 //キャンバスに文字を描く
 function drawText(canvas_id, text_id, x , y)
 {
-  var canvas = document.getElementsById(canvas_id);
+  var canvas = document.getElementById(canvas_id);
   var ctx = canvas.getContext('2d');
   var text = document.getElementById(text_id);
   //文字のスタイルを指定
