@@ -35,9 +35,10 @@
               <h5 class="card-title">「顧客が解決する必要のある課題」を記入します。</h5>
               <p class="card-text">ターゲットと考えられる顧客セグメントにとって、優先順位の高い課題を1〜3個ほど挙げてみましょう。<br>解決すべき課題が見つからない場合は、提供しようと考えている製品やサービスが解決できる課題がない状況を意味し、ユーザー像が不透明になってしまいます。</p>
               あなたの考える課題は何ですか：<br>
-              <textarea rows="6" cols="80" id="canvas_text1">ここに記入してください。</textarea><br> 
+              <textarea rows="8" cols="100" id="canvas_text1">ここに記入してください。</textarea><br> 
               <p>   
-              <button onclick="drawText('preview', 'canvas_text1', 15, 50);">入力</button> <!-- 10文字で改行 -->
+              <button onclick="drawText('preview', 'canvas_text1', 15, 50, 10);">入力</button> <!-- 10文字で改行 -->
+              <button onclick="resetText('preview', 'canvas_text1', 15, 50, 130, 300);">リセット</button>
               </p>
             </div>
         </div>
@@ -48,9 +49,10 @@
               <p class="card-text">顧客をグループ化し、どのセグメントに関わるのか、あるいは関わらないのかを設定します。<br>
                 性別や年代、住んでいる場所などのデモグラフィック属性や、利用目的などでセグメント分けをすると良いです。</p>
               あなたの考える顧客セグメントは何ですか：<br>
-              <textarea rows="6" cols="100" id="canvas_text2">ここに記入してください。</textarea><br>
+              <textarea rows="8" cols="100" id="canvas_text2">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text2', 580, 50);">入力</button> <!-- 9文字で改行 -->
+              <button onclick="drawText('preview', 'canvas_text2', 580, 50, 9);">入力</button> <!-- 9文字で改行 -->
+              <button onclick="resetText('preview', 'canvas_text2', 580, 50, 130, 300);">リセット</button>
               </p>
             </div>
         </div>
@@ -61,9 +63,10 @@
               <p class="card-text">ここでいう「価値」とは、課題に対して企業が提供する、製品・サービスの内容のことを指します。<br>
                 顧客セグメントごとに提供価値を考えていきますが、整合性がわかりにくい場合は、このブロックだけを抽出したバリュープロポジションキャンバスや価値・顧客シートによる検証や顧客分析を行います。</p>
               あなたの考える独自の価値提案は何ですか：<br>
-              <textarea rows="6" cols="100" id="canvas_text3">ここに記入してください。</textarea><br>
+              <textarea rows="8" cols="100" id="canvas_text3">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text3', 296, 50);">入力</button> <!-- 10文字で改行 -->
+              <button onclick="drawText('preview', 'canvas_text3', 296, 50, 10);">入力</button> <!-- 10文字で改行 -->
+              <button onclick="resetText('preview', 'canvas_text3', 296, 50, 130, 300);">リセット</button>
               </p>
             </div>
         </div>
@@ -76,7 +79,8 @@
             　あなたの考えるソリューションは何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text4">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text4', 154, 50);">入力</button> <!-- 10文字で改行 -->
+              <button onclick="drawText('preview', 'canvas_text4', 154, 50, 10);">入力</button> <!-- 10文字で改行 -->
+              <button onclick="resetText('preview', 'canvas_text4', 154, 50, 130, 130);">リセット</button>
               </p>
             </div>
         </div>
@@ -90,7 +94,8 @@
             　あなたの考える圧倒的な優位性は何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text5">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text5', 435, 50);">入力</button> <!-- 10文字で改行 -->
+              <button onclick="drawText('preview', 'canvas_text5', 435, 50, 10);">入力</button> <!-- 10文字で改行 -->
+              <button onclick="resetText('preview', 'canvas_text5', 435, 50, 130, 130);">リセット</button>
               </p>
             </div>
         </div>
@@ -101,9 +106,10 @@
               <p class="card-text">スタートアップや新規事業において、コストを引き下げたり、無償提供することで利用者を増やしたりする手法はよく見られます。<br>
                 一方で、最終的にどう収益をあげるのかを見越した、慎重な計画が必要な項目です。</p>
               あなたの考える収益の流れは何ですか：<br>
-              <textarea rows="6" cols="100" id="canvas_text6">ここに記入してください。</textarea><br>
+              <textarea rows="8" cols="100" id="canvas_text6">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text6', 370, 390);">入力</button> <!-- 25文字で改行-->
+              <button onclick="drawText('preview', 'canvas_text6', 370, 390, 25);">入力</button> <!-- 25文字で改行-->
+              <button onclick="resetText('preview', 'canvas_text6', 370, 390, 330, 130);">リセット</button>
               </p>
             </div>
         </div>
@@ -113,9 +119,10 @@
               <h5 class="card-title">ビジネスモデルを運営するにあたり発生するコストを記入します。</h5>
               <p class="card-text">ここで算出したコストと【6】の収益から、大まかな損益分岐点を計算できます。</p>
               あなたの考えるコスト構造は何ですか：<br>
-              <textarea rows="6" cols="100" id="canvas_text7">ここに記入してください。</textarea><br>
+              <textarea rows="8" cols="100" id="canvas_text7">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text7', 15, 390);">入力</button> <!-- 25文字で改行-->
+              <button onclick="drawText('preview', 'canvas_text7', 15, 390, 25);">入力</button> <!-- 25文字で改行-->
+              <button onclick="resetText('preview', 'canvas_text7', 15, 390, 330, 130);">リセット</button>
               </p>
             </div>
         </div>
@@ -127,7 +134,8 @@
               あなたの考える主要指標は何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text8">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text8', 155, 220);">入力</button> <!--10文字で改行-->
+              <button onclick="drawText('preview', 'canvas_text8', 155, 220, 10);">入力</button> <!--10文字で改行-->
+              <button onclick="resetText('preview', 'canvas_text8', 155, 220, 130, 130);">リセット</button>
               </p>
             </div>
         </div>
@@ -140,7 +148,8 @@
               あなたの考えるチャネルは何ですか：<br>
               <textarea rows="6" cols="100" id="canvas_text9">ここに記入してください。</textarea><br>
               <p>
-              <button onclick="drawText('preview', 'canvas_text9', 435, 220);">入力</button> <!--10文字で改行-->
+              <button onclick="drawText('preview', 'canvas_text9', 435, 220, 10);">入力</button> <!--10文字で改行-->
+              <button onclick="resetText('preview', 'canvas_text9', 435, 220, 130, 130);">リセット</button>
               </p>
             </div>
         </div>
@@ -148,7 +157,13 @@
 </div>
 <br>
 
-<p><canvas id='preview'　width-100></canvas></p>
+<p>
+<canvas id='preview'　width-100></canvas><br>
+</p>
+<p>
+上の画像をダウンロードするにはこちら →
+<button onclick="saveCanvas('preview');">保存する</button>
+</p>
 <script src="{% static 'lean.js' %}"></script>
 {% endblock content %}
 </body>
